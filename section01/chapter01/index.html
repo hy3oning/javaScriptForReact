@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h2 {
+      background-color: red;
+      font-size: 3.5rem;
+      color: aliceblue;
+    }
+
+    #btn-click {
+      width: 400px;
+      height: 100px;
+      background-color: blue;
+      color: azure;
+      font-size: 3.5rem;
+    }
+    #btn-click:hover{
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 on>안녕</h2>
+  <button type="button" id="btn-click" onclick="alertCall()" >click </button>
+
+  <script>
+    function alertCall(){
+      alert('버튼이 클릭되었습니다')
+    }
+  </script>
+</body>
+
+</html>
