@@ -103,7 +103,7 @@ console.log(concatArr);
 // sort
 // 자바스크립트는 문자단위로 정렬(숫자도 문자로정렬)
 let chars = ["나", "다", "가"];
-// chars.sort(); //오름차순
+// let chars1 = chars.toSorted((a, b) => a.localeCompare(b)); //오름차순
 //내림차순
 let chars1 = chars.toSorted((a, b) => b.localeCompare(a)); //원본은 건드리지않음
 console.log(chars);
