@@ -21,3 +21,9 @@ console.log(`array[7]= ${array[7]}`);
 console.log(`array[8]= ${array[8]}`);
 console.log(`array[9]= ${array[9]}`);
 console.log(array);
+
+let array2 = new Array();
+array2.push("김동진");
+array2.push(11);
+array2.push("반갑습니다");
+console.log(array2);
