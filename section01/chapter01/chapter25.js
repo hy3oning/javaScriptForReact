@@ -30,3 +30,14 @@ console.log(myAge, myName, myHobby, extra);
 
 let _myAge = person.age;
 let _myName = person.name;
+
+// 객체 구조 분해 할당을 이용해서 함수의 매개변수를 받는 방법
+//각 멤버변수를 변수로 저장하고, 출력하고싶을때
+const printPerson = ({ name, age, hobby, extra = "hello" }) => {
+  console.log(`name = ${name}`);
+  console.log(`age = ${age + 1}`);
+  console.log(`hobby = ${hobby}`);
+  console.log(`extra = ${extra}`);
+};
+
+printPerson(person);
