@@ -19,7 +19,6 @@ let person = {
   age: 27,
   hobby: "테니스",
 };
-
 let person2 = ({
   age: myAge,
   name: myName,
