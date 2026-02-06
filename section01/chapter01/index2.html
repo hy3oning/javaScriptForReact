@@ -4,10 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React Test JS</title>
-    <script src="./chapter31.js"></script>
+    <script>
+      function onClick() {
+        const $ul = document.getElementById("ul");
+        for (let i = 0; i < 2000; i++) {
+          $ul.innerHTML += `<li>${i}</li>`;
+        }
+      }
+      function onClick2() {
+        const $ul = document.getElementById("ul");
+        let listValue = "";
+        for (let i = 0; i < 2000; i++) {
+          listValue += `<li>${i}</li>`;
+        }
+        $ul.innerHTML += listValue;
+      }
+    </script>
   </head>
 
   <body>
     <h2>안녕하세요</h2>
+    <button type="button" onclick="onClick()">실제돔</button>
+    <button type="button" onclick="onClick2()">가상돔</button>
+    <ul id="ul"></ul>
   </body>
 </html>

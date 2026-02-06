@@ -1,0 +1,12 @@
+.h1-login {
+  color: red;
+  background-color: aqua;
+  font-weight: 900;
+  font-size: 3.2rem;
+}
+
+#h1-logout {
+  color: red;
+  background-color: aqua;
+  font-weight: 900;
+}
