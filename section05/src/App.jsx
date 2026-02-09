@@ -1,12 +1,10 @@
 import "./App.css";
-import Bulb from "./components/Bulb";
-import Count from "./components/Count";
-import Register from "./components/Register";
+import HookExam from "./components/HookExam";
 export default function App() {
   return (
     <>
       <div>
-        <Register />
+        <HookExam />
       </div>
     </>
   );
