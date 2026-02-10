@@ -1,20 +1,48 @@
 .Editor {
-  width: 100%;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 10px 16px;
+  padding: 20px;
+  margin-bottom: 30px;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fafafa;
 }
+
+.Editor label {
+  align-self: center;
+  font-weight: 600;
+}
+
 .Editor input {
-  width: 150px;
-  height: 40px;
-  padding: 5px;
-  border: none;
-  background-color: aliceblue;
-  margin-left: 10px;
-  margin-bottom: 50px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
 }
+
+.Editor input:focus {
+  outline: none;
+  border-color: #4f8cff;
+  box-shadow: 0 0 0 2px rgba(79, 140, 255, 0.15);
+}
+
 .Editor button {
-  height: 45px;
-  margin-left: 15px;
-  background-color: rgb(213, 225, 236);
-  border-radius: 5px;
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  padding: 10px;
+
+  background-color: #4f8cff;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+}
+
+.Editor button:hover {
+  background-color: #3a73db;
 }

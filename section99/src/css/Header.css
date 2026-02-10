@@ -1,8 +1,18 @@
 .Header {
-  border-bottom: 1px solid black;
-  border-radius: 5px;
-  width: 100%;
-  text-align: center;
-  background-color: aliceblue;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
+  padding: 20px 24px;
+
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4f8cff, #6aa8ff);
+  color: white;
+
+  display: flex;
+  align-items: center;
+}
+
+.Header h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }

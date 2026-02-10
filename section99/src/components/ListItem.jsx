@@ -1,24 +1,28 @@
 import "./../css/ListItem.css";
-const ListItem = () => {
+
+const ListItem = ({ student, onDelete, onEdit }) => {
+  const { id, name, kor, eng, mat, date } = student;
+  const total = kor + eng + mat;
+  const avg = (total / 3).toFixed(1);
+
   return (
-    <>
-      <div className="ListItem">
-        <table>
-          <tr>
-            <th>학번</th>
-            <th>이름</th>
-            <th>국어</th>
-            <th>영어</th>
-            <th>수학</th>
-            <th>총점</th>
-            <th>평균</th>
-            <th>수정</th>
-            <th>삭제</th>
-            <th>등록일</th>
-          </tr>
-        </table>
-      </div>
-    </>
+    <tr>
+      <td>{id}</td>
+      <td>{name}</td>
+      <td>{kor}</td>
+      <td>{eng}</td>
+      <td>{mat}</td>
+      <td>{total}</td>
+      <td>{avg}</td>
+      <td>
+        <button onClick={() => onEdit(student)}>수정</button>
+      </td>
+      <td>
+        <button onClick={() => onDelete(id)}>삭제</button>
+      </td>
+      <td>{date}</td>
+    </tr>
   );
 };
+
 export default ListItem;

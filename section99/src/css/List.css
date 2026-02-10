@@ -1,13 +1,52 @@
 .List {
-  width: 90%;
-  margin-bottom: 50px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: white;
 }
+
 .List h1 {
-  background-color: aliceblue;
-  border-radius: 5px;
-  border-bottom: 1px solid black;
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.List input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.List input:focus {
+  outline: none;
+  border-color: #4f8cff;
+}
+
+.List table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.List th,
+.List td {
+  padding: 10px;
   text-align: center;
-  height: 60px;
-  line-height: 55px;
-  margin-bottom: 40px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.List th {
+  background-color: #f4f6f8;
+  font-weight: 600;
+}
+
+.List tbody tr:hover {
+  background-color: #f9fbff;
+}
+
+.List p {
+  margin-top: 15px;
+  text-align: center;
+  color: #888;
 }

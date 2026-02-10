@@ -1,10 +1,25 @@
-.ListItem {
-  width: 100%;
-  border: 1px solid black;
+.List button {
+  padding: 5px 10px;
+  font-size: 13px;
+
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
 }
-.ListItem table {
-  width: 100%;
+
+.List button:first-child {
+  background-color: #ffd966;
 }
-.ListItem th {
-  border: 1px solid black;
+
+.List button:first-child:hover {
+  background-color: #f5c842;
+}
+
+.List button:last-child {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.List button:last-child:hover {
+  background-color: #e64545;
 }
