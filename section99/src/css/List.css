@@ -1,0 +1,13 @@
+.List {
+  width: 90%;
+  margin-bottom: 50px;
+}
+.List h1 {
+  background-color: aliceblue;
+  border-radius: 5px;
+  border-bottom: 1px solid black;
+  text-align: center;
+  height: 60px;
+  line-height: 55px;
+  margin-bottom: 40px;
+}

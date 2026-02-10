@@ -1,0 +1,20 @@
+.Editor {
+  width: 100%;
+}
+.Editor input {
+  width: 150px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  background-color: aliceblue;
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+.Editor button {
+  height: 45px;
+  margin-left: 15px;
+  background-color: rgb(213, 225, 236);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
