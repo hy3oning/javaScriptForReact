@@ -1,12 +1,15 @@
 import "./../css/Header.css";
-const Header = () => {
+import { memo } from "react";
+
+const Header = ({ count }) => {
+  console.log(`header ${count}`);
+  const today = new Date().toLocaleDateString();
   return (
-    <>
-      <div className="Header">
-        <h2>오늘은📆</h2>
-        <h1>{new Date().toDateString()}</h1>
-      </div>
-    </>
+    <div className="Header">
+      <h2>오늘은 📆</h2>
+      <h1>{today}</h1>
+    </div>
   );
 };
-export default Header;
+
+export default memo(Header);

@@ -14,12 +14,13 @@ const Editor = ({ onCreate }) => {
     }
   };
   const onSubmit = () => {
-    if (content === null) {
+    if (content.trim() === "") {
       inputRef.current.focus();
       return;
     }
     onCreate(content);
     setContent("");
+    inputRef.current.focus();
   };
   return (
     <>

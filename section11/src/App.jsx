@@ -43,10 +43,14 @@ function reducer(todos, action) {
   }
 }
 function App() {
+  const [count, setCount] = useState(10);
   const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
   // 이벤트함수 setTodos생성 핸들러함수
   const onCreate = (content) => {
+    if (!content || content.trim() === "") {
+      return;
+    }
     dispatch({
       type: "CREATE",
       data: {
@@ -75,7 +79,7 @@ function App() {
     <>
       <div className="App">
         <h1>오늘의 TODO!LIST</h1>
-        <Header />
+        <Header count={count} />
         <Exam />
         <Editor onCreate={onCreate} />
         <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
