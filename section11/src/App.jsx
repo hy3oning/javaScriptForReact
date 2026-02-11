@@ -1,6 +1,6 @@
 import "./css/App.css";
 
-import { useState, useRef, useReducer } from "react";
+import { useState, useRef, useReducer, useCallback } from "react";
 import Editor from "./components/Editor";
 import Header from "./components/Header";
 import List from "./components/List";
@@ -47,7 +47,7 @@ function App() {
   const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
   // 이벤트함수 setTodos생성 핸들러함수
-  const onCreate = (content) => {
+  const onCreate = useCallback((content) => {
     if (!content || content.trim() === "") {
       return;
     }
@@ -60,21 +60,21 @@ function App() {
         date: new Date().getTime(),
       },
     });
-  };
+  }, []);
   // 이벤트함수 setTodos수정
-  const onUpdate = (targetId) => {
+  const onUpdate = useCallback((targetId) => {
     dispatch({
       type: "UPDATE",
       targetId: targetId,
     });
-  };
+  }, []);
   // 이벤트함수 setTodos 삭제
-  const onDelete = (targetId) => {
+  const onDelete = useCallback((targetId) => {
     dispatch({
       type: "DELETE",
       targetId: targetId,
     });
-  };
+  }, []);
   return (
     <>
       <div className="App">
