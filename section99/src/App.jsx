@@ -33,19 +33,17 @@ const mockData = [
 ];
 
 function App() {
-  // 입력 상태
-  const [input, setInput] = useState({ name: "", kor: 0, eng: 0, mat: 0 });
-
   // 학생 목록
   const [students, setStudents] = useState(mockData);
+
+  // 입력 상태
+  const [input, setInput] = useState({ name: "", kor: 0, eng: 0, mat: 0 });
 
   // 수정 모드용 id
   const [editId, setEditId] = useState(null);
 
-  // id 증가용 ref
+  // id 증가용 ref, null 제어
   const idRef = useRef(4);
-
-  // null 제어
   const nameRef = useRef(null);
   const korRef = useRef(null);
   const engRef = useRef(null);
@@ -105,6 +103,7 @@ function App() {
   // 삭제
   const onDelete = (id) => {
     setStudents(students.filter((student) => student.id !== id));
+    alert("정말 삭제하시겠습니까?");
   };
 
   // 수정 시작
