@@ -26,6 +26,8 @@
 }
 .DiaryItem .info_section .content {
   font-size: 18px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .DiaryItem .button_section {
   min-width: 70px;
