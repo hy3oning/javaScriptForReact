@@ -54,7 +54,8 @@ function reducer(state, action) {
 }
 function App() {
   const [state, dispatch] = useReducer(reducer, mockData);
-  const idRef = useRef(4);
+  // App.js 내부
+  const idRef = useRef(5); // mockData ID가 4까지 있으므로 차기 ID는 5부터
   //이벤트처리
 
   const onCreate = (createdDate, emotionId, content) => {
@@ -67,13 +68,16 @@ function App() {
     dispatch({ type: "CREATE", data: newItem });
   };
   const onUpdate = (id, createdDate, emotionId, content) => {
-    const newItem = {
-      id,
-      createdDate,
-      emotionId,
-      content,
-    };
-    dispatch({ type: "UPDATE", data: newItem });
+    dispatch({
+      type: "UPDATE",
+      id, // 리듀서에서 item.id === action.id 비교용
+      data: {
+        id,
+        createdDate,
+        emotionId,
+        content,
+      },
+    });
   };
   const onDelete = (id) => {
     dispatch({ type: "DELETE", id });

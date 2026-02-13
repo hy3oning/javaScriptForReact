@@ -1,7 +1,7 @@
 import Button from "./Button";
 import EmotionItem from "./EmotionItem";
 import "./../css/Editor.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const emotionList = [
@@ -37,7 +37,7 @@ const getStringDate = (date) => {
   return `${year}-${month}-${day}`;
 };
 
-const Editor = ({ onSubmit }) => {
+const Editor = ({ onSubmit, initData }) => {
   const nav = useNavigate();
 
   // const [createDate, setCreateDate] = useState(new Date());
@@ -49,13 +49,30 @@ const Editor = ({ onSubmit }) => {
     content: "",
   });
   const onChangeInput = (e) => {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
+
+    // emotionId는 숫자로 저장되어야 비교 연산(===)이 잘 작동합니다.
+    if (name === "emotionId") {
+      value = Number(value);
+    }
+
     setInput((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
+  //마운트기능(마운트가 되자마자 전달되는 initData값을 각각의 useState변수 저장해야한다.)
+  useEffect(() => {
+    if (initData) {
+      // 기존 setInput 내부의 함수 호출 방식()을 객체 할당 방식(:)으로 수정
+      setInput({
+        createdDate: getStringDate(new Date(initData.createdDate)),
+        emotionId: initData.emotionId,
+        content: initData.content,
+      });
+    }
+  }, [initData]);
   return (
     <>
       <div className="Editor">
