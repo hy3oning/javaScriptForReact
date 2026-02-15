@@ -1,0 +1,72 @@
+/* NewBoard.css */
+
+/* 전체 래퍼 */
+.newboard-wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+/* 메인 입력 영역 */
+.newboard-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* 작성자 입력 */
+.newboard-author {
+  font-size: 15px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+}
+
+.newboard-author:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* 제목 입력 */
+.newboard-title {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+}
+
+.newboard-title:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* 내용 입력 */
+.newboard-content {
+  min-height: 200px;
+  padding: 12px 16px;
+  font-size: 15px;
+  line-height: 1.6;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  resize: vertical;
+  outline: none;
+}
+
+.newboard-content:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* 버튼 래퍼 */
+.newboard-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
