@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 왼쪽은 그대로 */
+.header_left {
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
+
+/* ✅ 오른쪽 폭 늘리기 (버튼 2개 들어가게) */
+.header_right {
+  width: 220px; /* 200~260 사이로 취향 */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* ✅ Header 안의 버튼만 width: auto로 덮어쓰기 */
+.header .btn {
+  width: auto;
+  height: 36px;
+  padding: 0 12px;
+}
+
+/* ✅ 오른쪽 버튼 그룹 */
+.header-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}

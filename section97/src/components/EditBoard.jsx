@@ -1,19 +1,34 @@
 import "./../css/NewBoard.css";
-import Header from "../components/Header";
-import Button from "../components/Button";
-import { useContext, useState } from "react";
-import { BoardDispatchContext } from "../App";
-import { useNavigate } from "react-router-dom";
+import Header from "./Header";
+import Button from "./Button";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { BoardDispatchContext, BoardStateContext } from "../App";
 
-const NewBoard = () => {
-  const { onCreate } = useContext(BoardDispatchContext);
+const EditBoard = () => {
+  const { id } = useParams();
+  const targetId = Number(id);
   const nav = useNavigate();
+
+  const boardList = useContext(BoardStateContext);
+  const { onUpdate } = useContext(BoardDispatchContext);
+
+  const target = boardList.find((b) => b.id === targetId);
 
   const [input, setInput] = useState({
     author: "",
     title: "",
     content: "",
   });
+
+  useEffect(() => {
+    if (!target) return;
+    setInput({
+      author: target.author ?? "",
+      title: target.title ?? "",
+      content: target.content ?? "", // ✅ 오타 수정
+    });
+  }, [target]);
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -26,30 +41,37 @@ const NewBoard = () => {
       return;
     }
 
-    onCreate(input.author, input.title, input.content);
-    nav("/home", { replace: true });
+    onUpdate(targetId, input.author, input.title, input.content);
+    nav(`/board/${targetId}`, { replace: true });
   };
+
+  if (!target) {
+    return (
+      <div style={{ padding: 20 }}>
+        <p>존재하지 않는 게시글입니다.</p>
+        <Button text="홈으로" onClick={() => nav("/home", { replace: true })} />
+      </div>
+    );
+  }
 
   return (
     <div className="newboard-wrapper">
       <Header
-        title={"글쓰기"}
+        title={"수정하기"}
         leftChild={<Button text={"뒤로"} onClick={() => nav(-1)} />}
-        rightChild={<Button text={"작성완료"} onClick={onSubmit} />}
+        rightChild={<Button text={"수정완료"} onClick={onSubmit} />}
       />
 
       <main className="newboard-container">
         <section className="newboard-card">
-          <h2 className="newboard-title">새 게시글 작성</h2>
-          <p className="newboard-subtitle">작성자, 제목, 내용을 입력하세요.</p>
+          <h2 className="newboard-title">게시글 수정</h2>
+          <p className="newboard-subtitle">내용을 수정하고 저장하세요.</p>
 
           <div className="newboard-form">
             <label className="newboard-label">작성자</label>
             <input
               className="newboard-input"
               name="author"
-              type="text"
-              placeholder="작성자 이름"
               value={input.author}
               onChange={onChange}
             />
@@ -58,8 +80,6 @@ const NewBoard = () => {
             <input
               className="newboard-input"
               name="title"
-              type="text"
-              placeholder="제목을 입력하세요"
               value={input.title}
               onChange={onChange}
             />
@@ -68,16 +88,9 @@ const NewBoard = () => {
             <textarea
               className="newboard-textarea"
               name="content"
-              placeholder="내용을 입력하세요"
               value={input.content}
               onChange={onChange}
             />
-
-            <div className="newboard-footer">
-              <span className="newboard-hint">
-                ※ 작성완료 버튼을 누르면 등록됩니다.
-              </span>
-            </div>
           </div>
         </section>
       </main>
@@ -85,4 +98,4 @@ const NewBoard = () => {
   );
 };
 
-export default NewBoard;
+export default EditBoard;

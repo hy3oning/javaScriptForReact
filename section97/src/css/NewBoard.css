@@ -1,0 +1,99 @@
+.newboard-wrapper {
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+/* Home이랑 동일한 중앙 컨테이너 */
+.newboard-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  margin-top: 80px; /* Header 아래 여백 */
+}
+
+/* 작성 카드 */
+.newboard-card {
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.newboard-title {
+  font-size: 22px;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.newboard-subtitle {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+/* 폼 */
+.newboard-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newboard-label {
+  font-size: 13px;
+  color: #374151;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* input/textarea 공통 느낌 */
+.newboard-input,
+.newboard-textarea {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: #111827;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.newboard-input {
+  height: 46px;
+}
+
+.newboard-textarea {
+  min-height: 180px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.newboard-input::placeholder,
+.newboard-textarea::placeholder {
+  color: #9ca3af;
+}
+
+.newboard-input:hover,
+.newboard-textarea:hover {
+  border-color: #c7d2fe;
+}
+
+.newboard-input:focus,
+.newboard-textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* 하단 안내 */
+.newboard-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.newboard-hint {
+  font-size: 12px;
+  color: #9ca3af;
+}
