@@ -1,0 +1,31 @@
+.btn {
+  width: 100%;
+  height: 48px;
+
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  border: none;
+  border-radius: 8px;
+
+  color: #020617;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn:disabled {
+  background: #334155;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
