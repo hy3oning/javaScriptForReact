@@ -1,0 +1,38 @@
+.board-detail-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.board-detail-box {
+  width: 100%;
+  max-width: 700px;
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.board-detail-title {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.board-detail-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.board-detail-content {
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 200px;
+  margin-bottom: 30px;
+}
+
+.board-detail-btn {
+  display: flex;
+  justify-content: flex-end;
+}
