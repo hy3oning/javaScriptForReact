@@ -1,0 +1,40 @@
+.detail-wrapper {
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  margin-top: 80px;
+}
+
+.detail-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.detail-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.detail-content {
+  white-space: pre-wrap;
+  line-height: 1.7;
+  color: #111827;
+  font-size: 15px;
+}
