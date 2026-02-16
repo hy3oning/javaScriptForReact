@@ -3,7 +3,10 @@ import Header from "./Header";
 import Button from "./Button";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { BoardDispatchContext, BoardStateContext } from "../App";
+import {
+  BoardDispatchContext,
+  BoardStateContext,
+} from "../context/BoardContext";
 
 const EditBoard = () => {
   const { id } = useParams();
@@ -26,7 +29,7 @@ const EditBoard = () => {
     setInput({
       author: target.author ?? "",
       title: target.title ?? "",
-      content: target.content ?? "", // ✅ 오타 수정
+      content: target.content ?? "",
     });
   }, [target]);
 

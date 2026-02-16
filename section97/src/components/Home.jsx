@@ -2,7 +2,7 @@ import "./../css/Home.css";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Button from "../components/Button";
-import { BoardStateContext } from "../App";
+import { BoardStateContext } from "../context/BoardContext";
 import { useContext } from "react";
 const Home = () => {
   const nav = useNavigate();

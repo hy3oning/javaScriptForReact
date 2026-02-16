@@ -2,7 +2,7 @@ import "./../css/NewBoard.css";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import { useContext, useState } from "react";
-import { BoardDispatchContext } from "../App";
+import { BoardDispatchContext } from "../context/BoardContext";
 import { useNavigate } from "react-router-dom";
 
 const NewBoard = () => {
