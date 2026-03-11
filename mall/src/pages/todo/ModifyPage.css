@@ -1,35 +1,25 @@
-/* 부트스트랩의 <Container> 역할: 중앙 정렬 및 여백 */
-.main-container {
+﻿/* 전체 레이아웃 컨테이너 */
+.list-page-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
-/* mt-5 (margin-top: 3rem) 및 d-grid 역할 */
-.content-area {
+/* 상단 Header와의 간격 (mt-5 대체) */
+.list-content-area {
   margin-top: 3rem;
+  min-height: 80vh; /* 화면 높이를 확보하여 하단이 비어 보이지 않게 함 */
 }
-.button-wrapper {
+/* 목록 컴포넌트를 감싸는 영역 (d-grid 및 gap-2 대체) */
+.list-wrapper {
   display: flex;
+  gap: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid black;
+  padding: 20px;
 }
-/* btn btn-outline-primary 역할 직접 구현 */
-.custom-btn-outline {
-  padding: 10px 20px;
-  font-size: 1.1rem;
-  background-color: transparent;
-  color: #0d6efd;
-  border: 1px solid #0d6efd;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%; /* d-grid의 기본 동작 */
-}
-/* 마우스를 올렸을 때의 효과(Hover) */
-.custom-btn-outline:hover {
-  background-color: #0d6efd;
-  color: white;
-}
-/* 버튼을 클릭했을 때의 효과(Active) */
-.custom-btn-outline:active {
-  background-color: #0a58ca;
-  border-color: #0a53be;
+/* ListComponent 내부의 스타일이 깨질 경우를 대비한 기본 설정 */
+.list-wrapper > div {
+  width: 100%;
 }
