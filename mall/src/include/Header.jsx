@@ -3,17 +3,24 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
+
+  const navMenuRef = useRef(null);
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
+    setIsProductDropdownOpen(false);
   };
-
+  const toggleProductDropdown = () => {
+    setIsProductDropdownOpen((prev) => !prev);
+    setIsDropdownOpen(false);
+  };
   useEffect(() => {
     const handleOutsideClick = (e) => {
       // dropdown 영역 밖을 클릭했으면 닫기
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+      if (navMenuRef.current && !navMenuRef.current.contains(e.target)) {
         setIsDropdownOpen(false);
+        setIsProductDropdownOpen(false);
       }
     };
 
@@ -28,7 +35,7 @@ export default function Header() {
     <>
       <nav className="custom-navbar">
         <div className="nav-container">
-          <div className="nav-left">
+          <div className="nav-left" ref={navMenuRef}>
             <Link to="/" className="nav-link">
               MAIN
             </Link>
@@ -37,7 +44,7 @@ export default function Header() {
             </Link>
 
             {/* 드롭다운 영역 */}
-            <div className="nav-dropdown" ref={dropdownRef}>
+            <div className="nav-dropdown">
               <button className="dropdown-toggle" onClick={toggleDropdown}>
                 TODO <span className="arrow">▾</span>
               </button>
@@ -51,6 +58,28 @@ export default function Header() {
                   </li>
                   <li>
                     <Link to="/todo/add">ADD</Link>
+                  </li>
+                  <li className="divider"></li>
+                  <li>
+                    <a href="#">예비용</a>
+                  </li>
+                </ul>
+              )}
+            </div>
+            <div className="nav-dropdown">
+              <button
+                className="dropdown-toggle"
+                onClick={toggleProductDropdown}
+              >
+                PRODUCT <span className="arrow">▾</span>
+              </button>
+              {isProductDropdownOpen && (
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link to="/product/list">LIST</Link>
+                  </li>
+                  <li>
+                    <Link to="/product/add">ADD</Link>
                   </li>
                   <li className="divider"></li>
                   <li>
