@@ -1,6 +1,12 @@
 import Header from "../include/Header"; // Header 경로 확인 필요
+import useCustomLogin from "../hooks/useCustomLogin";
 import "./AboutPage.css";
 const AboutPage = () => {
+  const { isLogin, moveToLoginReturn } = useCustomLogin();
+  if (!isLogin) {
+    alert("로그인을 해야만 볼수있는 페이집니다");
+    return moveToLoginReturn();
+  }
   return (
     <div className="main-container">
       <Header />

@@ -5,15 +5,20 @@ import Loading from "../pages/Loading";
 // 라우터(컨트롤러 대상이 되는 페이지를 가져와야된다.)
 const Main = lazy(() => import("../pages/Mainpage"));
 const About = lazy(() => import("../pages/AboutPage"));
-const Login = lazy(() => import("../pages/Login"));
+// const Login = lazy(() => import("../pages/Login"));
+/** TODO */
 const List = lazy(() => import("../pages/todo/ListPage"));
 const Read = lazy(() => import("../pages/todo/ReadPage"));
 const Modify = lazy(() => import("../pages/todo/ModifyPage"));
 const Add = lazy(() => import("../pages/todo/AddPage"));
+/** PRODUCT */
 const ProductListPage = lazy(() => import("../pages/product/ListPage"));
 const ProductAddPage = lazy(() => import("../pages/product/AddPage"));
 const ProductReadPage = lazy(() => import("../pages/product/ReadPage"));
 const ProductModifyPage = lazy(() => import("../pages/product/ModifyPage"));
+/** MEMBER */
+const LoginPage = lazy(() => import("../pages/member/LoginPage"));
+const LogoutPage = lazy(() => import("../pages/member/LogoutPage"));
 const Root = createBrowserRouter([
   {
     path: "/",
@@ -32,10 +37,18 @@ const Root = createBrowserRouter([
     ),
   },
   {
-    path: "login",
+    path: "/member/login",
     element: (
       <Suspense fallback={<Loading />}>
-        <Login />
+        <LoginPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/member/logout",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <LogoutPage />
       </Suspense>
     ),
   },
